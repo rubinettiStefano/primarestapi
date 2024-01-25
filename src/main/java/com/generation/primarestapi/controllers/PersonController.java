@@ -3,6 +3,7 @@ package com.generation.primarestapi.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,6 +40,7 @@ public class PersonController
     //@RequestBody è per RestController quello che @ModelAttribute è per il controller
     //normale 
     @PostMapping("/people")
+    @CrossOrigin
     public Person  insertPerson(@RequestBody Person newPerson) 
     {
         Person salvata= repo.save(newPerson);
